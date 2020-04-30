@@ -1,0 +1,77 @@
+{
+  "name": "tbify",
+  "version": "1.0.0",
+  "description": "使用淘宝 NPM 镜像加速包管理工具安装依赖的速度。",
+  "keywords": [
+    "npm",
+    "yarn",
+    "pnpm",
+    "cnpm",
+    "package-manager",
+    "taobao",
+    "tbify"
+  ],
+  "homepage": "https://github.com/fjc0k/tbify#readme",
+  "bugs": {
+    "url": "https://github.com/fjc0k/tbify/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fjc0k/tbify.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jay Fong",
+    "email": "fjc0kb@gmail.com",
+    "url": "https://github.com/fjc0k"
+  },
+  "main": "lib/run.js",
+  "bin": {
+    "tbify": "lib/run.js",
+    "tnm": "lib/npm.js",
+    "tnx": "lib/npx.js",
+    "tpm": "lib/pnpm.js",
+    "tpx": "lib/pnpx.js",
+    "tyn": "lib/yarn.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "shx rm -rf lib && tsc -p tsconfig.build.json",
+    "dev": "shx rm -rf lib && tsc -p tsconfig.build.json -w",
+    "prepublishOnly": "npm run build",
+    "release": "standard-version -a && git push --follow-tags origin master && npm publish",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css,less,scss,sass,html,htm,vue,yml,yaml,json,md}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "execa": "^4.0.0"
+  },
+  "devDependencies": {
+    "codecov": "^3",
+    "eslint": "^6",
+    "haoma": "^1.12.2",
+    "husky": "^4",
+    "jest": "^25",
+    "lint-staged": "^10",
+    "prettier": "^2",
+    "shx": "^0.3.2",
+    "standard-version": "^7.1.0",
+    "tempy": "^0.5.0",
+    "typescript": "^3"
+  }
+}

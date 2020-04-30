@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "CommonJS",
+    "declaration": true,
+    "outDir": "./lib"
+  },
+  "include": ["src"],
+  "exclude": ["**/*.test.*"]
+}

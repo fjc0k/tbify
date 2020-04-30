@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "removeComments": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "preserveSymlinks": true,
+    "newLine": "LF",
+    "jsx": "react",
+    "lib": ["esnext", "dom"]
+  }
+}

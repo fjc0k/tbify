@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+node_modules
+coverage
+lib
+dist
+*.tsbuildinfo
+*.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
