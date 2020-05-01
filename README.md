@@ -2,11 +2,23 @@
 
 使用 [淘宝 NPM 镜像](https://developer.aliyun.com/mirror/NPM) 加速包管理工具安装依赖的速度。
 
-## 实现原理
+---
+
+<!-- TOC depthFrom:2 -->
+
+- [原理](#原理)
+- [安装](#安装)
+- [使用](#使用)
+- [鸣谢](#鸣谢)
+- [许可](#许可)
+
+<!-- /TOC -->
+
+## 原理
 
 基于环境变量对国内请求速度欠佳的资源地址进行了替换，具体分为两点：
 
-- 通过环境变量令包管理工具使用淘宝源安装依赖；
+- 通过环境变量令包管理工具（`npm`、`npx`、`yarn`、`pnpm`、`pnpx`）使用淘宝源安装依赖；
 - 通过环境变量令诸如 `nvm`、 `node-sass`、`Electron`、`Puppeteer`、`Cypress`、`Sharp` 等包使用淘宝镜像安装其自身所需资源。
 
 以上，本工具对包管理工具本身零侵入，同时，对环境变量的设置也是一次性的，并不会产生任何的副作用，请放心使用。
@@ -46,7 +58,7 @@ tbify printenv npm_config_registry
 
 ## 鸣谢
 
-感谢 [淘宝 NPM 团队](https://github.com/cnpm) 提供的优质镜像，解救广大前端同胞于水火！👍
+正所谓前人栽树后人乘凉，感谢 [@fengmk2](https://github.com/fengmk2) 大佬及 [cnpm 团队](https://github.com/cnpm) 为提供一个优质国内镜像所作出的努力！👍
 
 同时本工具从 [@yiminghe](https://github.com/yiminghe) 大佬的 [tyarn](https://github.com/yiminghe/tyarn) 项目借鉴了很多思路，一并表示感谢！💐
 
