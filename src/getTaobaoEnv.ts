@@ -3,6 +3,13 @@
 
 import { TAOBAO_MIRROR, TAOBAO_REGISTRY } from './consts'
 
+// 尽量使用不带 npm_config_ 或 npm_package_config_ 前缀的环境变量：
+// npm_config_ 前缀的环境变量会被 npm 解析为参数，
+// 且在内部总会被转换为小写（即大小写不敏感），
+// 同时在执行 npm-scripts（譬如 install、postinstall）时，
+// 这些参数又会被设置为全小写的环境变量 npm_config_* 向下传递，
+// 这就导致那些实现不严谨、预期得到大写参数的包得不到正确的设置，
+// 比如 Cypress。
 export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
   return {
     // NPM registry
@@ -11,48 +18,61 @@ export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
     // Yarn registry
     yarn_registry: TAOBAO_REGISTRY,
 
+    // node
+    npm_config_disturl: `${TAOBAO_MIRROR}/node`,
+
     // nvm
     NVM_NODEJS_ORG_MIRROR: `${TAOBAO_MIRROR}/node`,
     NVM_IOJS_ORG_MIRROR: `${TAOBAO_MIRROR}/iojs`,
 
+    // nodist
+    NODIST_NODE_MIRROR: `${TAOBAO_MIRROR}/node`,
+    NODIST_IOJS_MIRROR: `${TAOBAO_MIRROR}/iojs`,
+
+    // n
+    N_NODE_MIRROR: `${TAOBAO_MIRROR}/node`,
+
     // node-gyp
     NODEJS_ORG_MIRROR: `${TAOBAO_MIRROR}/node`,
-
-    // node-canvas
-    npm_config_canvas_binary_host_mirror: `${TAOBAO_MIRROR}/node-canvas-prebuilt`,
-
-    // node-inspector
-    npm_config_profiler_binary_host_mirror: `${TAOBAO_MIRROR}/node-inspector/`,
-
-    // node-sqlite3
-    npm_config_node_sqlite3_binary_host_mirror: TAOBAO_MIRROR,
+    IOJS_ORG_MIRROR: `${TAOBAO_MIRROR}/iojs`,
 
     // node-sass
-    npm_config_sass_binary_site: `${TAOBAO_MIRROR}/node-sass`,
+    SASS_BINARY_SITE: `${TAOBAO_MIRROR}/node-sass`,
+
+    // node-swc
+    SWC_BINARY_SITE: `${TAOBAO_MIRROR}/node-swc`,
 
     // Browser drivers
-    npm_config_phantomjs_cdnurl: `${TAOBAO_MIRROR}/phantomjs`,
-    npm_config_chromedriver_cdnurl: `${TAOBAO_MIRROR}/chromedriver`.replace(
-      'https://',
-      'http://',
-    ),
-    npm_config_operadriver_cdnurl: `${TAOBAO_MIRROR}/operadriver`,
+    PHANTOMJS_CDNURL: `${TAOBAO_MIRROR}/phantomjs`,
+    CHROMEDRIVER_CDNURL: `${TAOBAO_MIRROR}/chromedriver`,
+    OPERADRIVER_CDNURL: `${TAOBAO_MIRROR}/operadriver`,
 
     // Electron
-    npm_config_electron_mirror: `${TAOBAO_MIRROR}/electron/`,
-    npm_config_electron_builder_binaries_mirror: `${TAOBAO_MIRROR}/electron-builder-binaries/`,
+    ELECTRON_MIRROR: `${TAOBAO_MIRROR}/electron/`,
+    ELECTRON_BUILDER_BINARIES_MIRROR: `${TAOBAO_MIRROR}/electron-builder-binaries/`,
 
     // Python
-    npm_config_python_mirror: `${TAOBAO_MIRROR}/python`,
-
-    // Couchbase
-    npm_config_couchbase_binary_host: `${TAOBAO_MIRROR}/couchbase`,
+    PYTHON_MIRROR: `${TAOBAO_MIRROR}/python`,
 
     // Chrome Puppeteer
-    npm_config_puppeteer_download_host: TAOBAO_MIRROR,
+    PUPPETEER_DOWNLOAD_HOST: TAOBAO_MIRROR,
 
     // Cypress
-    npm_config_CYPRESS_DOWNLOAD_MIRROR: `${LOCAL_MIRROR}/cypress`,
+    CYPRESS_DOWNLOAD_MIRROR: `${LOCAL_MIRROR}/cypress`,
+
+    // node-pre-gyp
+    // ref: https://github.com/mapbox/node-pre-gyp/pull/170
+    // https://github.com/node-gfx/node-canvas-prebuilt/blob/master/package.json#L24
+    npm_config_canvas_binary_host_mirror: `${TAOBAO_MIRROR}/node-canvas-prebuilt`,
+    // https://github.com/node-inspector/v8-profiler/blob/master/package.json#L24
+    npm_config_profiler_binary_host_mirror: `${TAOBAO_MIRROR}/node-inspector`,
+    // https://github.com/node-inspector/v8-debug/blob/master/package.json#L18
+    npm_config_debug_binary_host_mirror: `${TAOBAO_MIRROR}/node-inspector`,
+    // https://github.com/mapbox/node-sqlite3/blob/master/package.json#L10
+    npm_config_node_sqlite3_binary_host_mirror: TAOBAO_MIRROR,
+    // https://github.com/nodegit/nodegit/blob/master/package.json#L69
+    // NOTE: {version} 会被 node-pre-gyp 替换
+    npm_config_nodegit_binary_host_mirror: `${TAOBAO_MIRROR}/nodegit/v{version}`,
 
     // Sharp
     ...(() => {
@@ -62,7 +82,7 @@ export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
           minimumLibvipsVersionLabelled,
         } = require('sharp/lib/libvips.js')
         return {
-          npm_config_sharp_dist_base_url: `${TAOBAO_MIRROR}/sharp-libvips/v${minimumLibvipsVersionLabelled}/`,
+          SHARP_DIST_BASE_URL: `${TAOBAO_MIRROR}/sharp-libvips/v${minimumLibvipsVersionLabelled}/`,
         } as any
       } catch {
         return {}
