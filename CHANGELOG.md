@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/fjc0k/tbify/compare/v1.0.0...v1.1.0) (2020-05-01)
+
+### Features
+
+- 增加本地镜像支持 Cypress ([62f9444](https://github.com/fjc0k/tbify/commit/62f9444b1b143ccb3d7629d007913bd8bf776571))
+- 支持 Sharp ([6db899e](https://github.com/fjc0k/tbify/commit/6db899e541618f0233424fb3e1905085a5e58e91))
+
 ## 1.0.0 (2020-04-30)
 
 ### Features
