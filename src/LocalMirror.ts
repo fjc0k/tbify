@@ -63,7 +63,6 @@ export class LocalMirror {
             res.writeHead(302, {
               location: `${TAOBAO_MIRROR}/sharp-libvips/v${minimumLibvipsVersionLabelled}/${packagePath}`,
             })
-            res.end()
             break
           }
           default: {
