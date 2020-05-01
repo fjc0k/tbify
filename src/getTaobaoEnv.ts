@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/camelcase */
 
+// ref: https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L42
+
 import { TAOBAO_MIRROR, TAOBAO_REGISTRY } from './consts'
 
 // 尽量使用不带 npm_config_ 或 npm_package_config_ 前缀的环境变量：
@@ -57,6 +59,12 @@ export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
     // Chrome Puppeteer
     PUPPETEER_DOWNLOAD_HOST: TAOBAO_MIRROR,
 
+    // NW.js
+    NWJS_URLBASE: `${TAOBAO_MIRROR}/nwjs/v`,
+
+    // Sentry CLI
+    SENTRYCLI_CDNURL: `${TAOBAO_MIRROR}/sentry-cli`,
+
     // Cypress
     CYPRESS_DOWNLOAD_MIRROR: `${LOCAL_MIRROR}/cypress`,
 
@@ -77,5 +85,8 @@ export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
     // https://github.com/nodegit/nodegit/blob/master/package.json#L69
     // NOTE: {version} 会被 node-pre-gyp 替换
     npm_config_nodegit_binary_host_mirror: `${TAOBAO_MIRROR}/nodegit/v{version}`,
+
+    // prebuild
+    npm_config_sharp_binary_host: `${TAOBAO_MIRROR}/sharp`,
   }
 }
