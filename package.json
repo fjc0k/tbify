@@ -78,5 +78,8 @@
     "standard-version": "^7.1.0",
     "tempy": "^0.5.0",
     "typescript": "^3"
+  },
+  "engines": {
+    "node": ">=10.19.0"
   }
 }
