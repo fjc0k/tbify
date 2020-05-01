@@ -10,7 +10,7 @@ export async function run(
   args = process.argv.slice(2),
   cwd = process.cwd(),
 ) {
-  const localMirror = new LocalMirror()
+  const localMirror = new LocalMirror(cwd)
   await localMirror.start()
 
   const env = Object.assign(

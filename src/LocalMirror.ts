@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import getPort from 'get-port'
 import got from 'got'
 import http from 'http'
@@ -11,6 +12,8 @@ export class LocalMirror {
   private port: number | null = null
 
   private server: http.Server | null = null
+
+  constructor(private cwd: string) {}
 
   async getPort() {
     if (!this.port) {
@@ -47,6 +50,20 @@ export class LocalMirror {
             res.writeHead(302, {
               location: taobaoUrl,
             })
+            break
+          }
+          case 'sharp-libvips': {
+            // ref: https://github.com/lovell/sharp/blob/master/install/libvips.js#L24
+            const { minimumLibvipsVersionLabelled } = require(require.resolve(
+              'sharp/lib/libvips.js',
+              {
+                paths: [this.cwd],
+              },
+            ))
+            res.writeHead(302, {
+              location: `${TAOBAO_MIRROR}/sharp-libvips/v${minimumLibvipsVersionLabelled}/${packagePath}`,
+            })
+            res.end()
             break
           }
           default: {

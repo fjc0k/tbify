@@ -60,6 +60,10 @@ export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
     // Cypress
     CYPRESS_DOWNLOAD_MIRROR: `${LOCAL_MIRROR}/cypress`,
 
+    // Sharp
+    // NOTE: 后缀 / 必加
+    SHARP_DIST_BASE_URL: `${LOCAL_MIRROR}/sharp-libvips/`,
+
     // node-pre-gyp
     // ref: https://github.com/mapbox/node-pre-gyp/pull/170
     // https://github.com/node-gfx/node-canvas-prebuilt/blob/master/package.json#L24
@@ -73,20 +77,5 @@ export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
     // https://github.com/nodegit/nodegit/blob/master/package.json#L69
     // NOTE: {version} 会被 node-pre-gyp 替换
     npm_config_nodegit_binary_host_mirror: `${TAOBAO_MIRROR}/nodegit/v{version}`,
-
-    // Sharp
-    ...(() => {
-      try {
-        // ref: https://github.com/lovell/sharp/blob/master/install/libvips.js#L24
-        const {
-          minimumLibvipsVersionLabelled,
-        } = require('sharp/lib/libvips.js')
-        return {
-          SHARP_DIST_BASE_URL: `${TAOBAO_MIRROR}/sharp-libvips/v${minimumLibvipsVersionLabelled}/`,
-        } as any
-      } catch {
-        return {}
-      }
-    })(),
   }
 }
