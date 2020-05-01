@@ -28,8 +28,9 @@
   "main": "lib/run.js",
   "bin": {
     "tbify": "lib/run.js",
-    "tnm": "lib/alias/npm.js",
-    "tnx": "lib/alias/npx.js",
+    "tnpm": "lib/alias/npm.js",
+    "tnpx": "lib/alias/npx.js",
+    "tnvm": "lib/alias/nvm.js",
     "tpm": "lib/alias/pnpm.js",
     "tpx": "lib/alias/pnpx.js",
     "tyn": "lib/alias/yarn.js"
@@ -38,8 +39,9 @@
     "lib"
   ],
   "scripts": {
-    "build": "shx rm -rf lib && tsc -p tsconfig.build.json",
-    "dev": "shx rm -rf lib && tsc -p tsconfig.build.json -w",
+    "build": "shx rm -rf lib && npm run copyBin && tsc -p tsconfig.build.json",
+    "copyBin": "shx mkdir -p lib/bin && shx cp 'src/bin/*' lib/bin/",
+    "dev": "shx rm -rf lib && npm run copyBin && tsc -p tsconfig.build.json -w",
     "prepublishOnly": "npm run build",
     "release": "standard-version -a && git push --follow-tags origin master && npm publish",
     "test": "jest"

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import execa from 'execa'
 import { getTaobaoEnv } from './getTaobaoEnv'
+import { join } from 'path'
 import { LocalMirror } from './LocalMirror'
 
 export async function run(
@@ -10,16 +11,27 @@ export async function run(
 ) {
   const localMirror = new LocalMirror()
   await localMirror.start()
+
   const env = Object.assign(
     {},
     process.env,
     getTaobaoEnv(await localMirror.getUrl()),
   )
-  await execa(cmd, args, {
-    env: env,
-    cwd: cwd,
-    stdio: 'inherit',
-  })
+
+  // 兼容 nvm
+  if (cmd === 'nvm' && env.NVM_DIR != null) {
+    cmd = 'sh'
+    args.unshift(join(__dirname, './bin/nvm'))
+  }
+
+  try {
+    await execa(cmd, args, {
+      env: env,
+      cwd: cwd,
+      stdio: 'inherit',
+    })
+  } catch {}
+
   await localMirror.stop()
 }
 
