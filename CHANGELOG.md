@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/fjc0k/tbify/compare/v1.3.0...v1.4.0) (2020-05-01)
+
+### Features
+
+- 支持 Sharp ([6d85004](https://github.com/fjc0k/tbify/commit/6d85004b2d222d60eb65bde985612ac124437e3c))
+- 更新环境变量 ([88ed045](https://github.com/fjc0k/tbify/commit/88ed045333795985cfc8ec03da4f9ea64c19021b))
+
 ## [1.3.0](https://github.com/fjc0k/tbify/compare/v1.2.0...v1.3.0) (2020-05-01)
 
 ### Features
