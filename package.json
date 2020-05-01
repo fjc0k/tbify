@@ -28,11 +28,11 @@
   "main": "lib/run.js",
   "bin": {
     "tbify": "lib/run.js",
-    "tnm": "lib/npm.js",
-    "tnx": "lib/npx.js",
-    "tpm": "lib/pnpm.js",
-    "tpx": "lib/pnpx.js",
-    "tyn": "lib/yarn.js"
+    "tnm": "lib/alias/npm.js",
+    "tnx": "lib/alias/npx.js",
+    "tpm": "lib/alias/pnpm.js",
+    "tpx": "lib/alias/pnpx.js",
+    "tyn": "lib/alias/yarn.js"
   },
   "files": [
     "lib"
