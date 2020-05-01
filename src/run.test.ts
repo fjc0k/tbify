@@ -1,5 +1,5 @@
 import tmp from 'tempy'
-import { getTaobaoEnv } from './env'
+import { getTaobaoEnv } from './getTaobaoEnv'
 import { readFileSync, unlinkSync } from 'fs'
 import { run } from './run'
 

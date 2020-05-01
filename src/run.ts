@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import execa from 'execa'
-import { getTaobaoEnv } from './env'
+import { getTaobaoEnv } from './getTaobaoEnv'
 import { LocalMirror } from './LocalMirror'
 
 export async function run(
