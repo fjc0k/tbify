@@ -3,6 +3,7 @@ import execa from 'execa'
 import { getTaobaoEnv } from './getTaobaoEnv'
 import { join } from 'path'
 import { LocalMirror } from './LocalMirror'
+import { TAOBAO_MIRROR } from './consts'
 
 export async function run(
   cmd: string,
@@ -19,9 +20,27 @@ export async function run(
   )
 
   // 兼容 nvm
-  if (cmd === 'nvm' && env.NVM_DIR != null) {
-    cmd = 'sh'
-    args.unshift(join(__dirname, './bin/nvm'))
+  if (cmd === 'nvm') {
+    if (process.platform === 'win32') {
+      try {
+        await Promise.all(
+          // ref: https://github.com/coreybutler/nvm-windows#usage
+          [
+            `nvm node_mirror ${TAOBAO_MIRROR}/node/`,
+            `nvm npm_mirror ${TAOBAO_MIRROR}/npm/`,
+          ].map(command =>
+            execa(command, {
+              env: env,
+              cwd: cwd,
+              stdio: 'ignore',
+            }),
+          ),
+        )
+      } catch {}
+    } else if (env.NVM_DIR != null) {
+      cmd = 'sh'
+      args.unshift(join(__dirname, './bin/nvm'))
+    }
   }
 
   try {
