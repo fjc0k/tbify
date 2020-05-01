@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/camelcase */
 
 import { TAOBAO_MIRROR, TAOBAO_REGISTRY } from './consts'
@@ -52,5 +53,20 @@ export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
 
     // Cypress
     npm_config_CYPRESS_DOWNLOAD_MIRROR: `${LOCAL_MIRROR}/cypress`,
+
+    // Sharp
+    ...(() => {
+      try {
+        // ref: https://github.com/lovell/sharp/blob/master/install/libvips.js#L24
+        const {
+          minimumLibvipsVersionLabelled,
+        } = require('sharp/lib/libvips.js')
+        return {
+          npm_config_sharp_dist_base_url: `${TAOBAO_MIRROR}/sharp-libvips/v${minimumLibvipsVersionLabelled}/`,
+        } as any
+      } catch {
+        return {}
+      }
+    })(),
   }
 }
