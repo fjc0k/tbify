@@ -1,9 +1,13 @@
 import tmp from 'tempy'
+import { getTaobaoEnv } from './env'
 import { readFileSync, unlinkSync } from 'fs'
 import { run } from './run'
-import { taobaoEnv } from './env'
 
-test('正确设置环境变量', () => {
+const port = 40033
+
+jest.mock('get-port', () => () => port)
+
+test('正确设置环境变量', async () => {
   const envFilePath = tmp.file()
   const jsFilePath = tmp.writeSync(`
     const fs = require('fs')
@@ -12,9 +16,9 @@ test('正确设置环境变量', () => {
       JSON.stringify(process.env, null, 2),
     )
   `)
-  run('node', [jsFilePath])
+  await run('node', [jsFilePath])
   expect(JSON.parse(readFileSync(envFilePath).toString())).toEqual(
-    expect.objectContaining(taobaoEnv),
+    expect.objectContaining(getTaobaoEnv(`http://127.0.0.1:${port}`)),
   )
   unlinkSync(envFilePath)
   unlinkSync(jsFilePath)

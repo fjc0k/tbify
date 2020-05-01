@@ -1,56 +1,56 @@
 /* eslint-disable @typescript-eslint/camelcase */
 
-// ref: https://github.com/yiminghe/tyarn/blob/master/env.js
-// ref: https://github.com/cnpm/cnpm/pull/289/files
-// ref: https://npm.taobao.org/mirrors
+import { TAOBAO_MIRROR, TAOBAO_REGISTRY } from './consts'
 
-const taobaoRegistry = 'https://r.npm.taobao.org'
-const taobaoMirrors = 'https://cdn.npm.taobao.org/dist'
+export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
+  return {
+    // NPM registry
+    npm_config_registry: TAOBAO_REGISTRY,
 
-export const taobaoEnv: Record<string, string> = {
-  // NPM registry
-  npm_config_registry: taobaoRegistry,
+    // Yarn registry
+    yarn_registry: TAOBAO_REGISTRY,
 
-  // Yarn registry
-  yarn_registry: taobaoRegistry,
+    // nvm
+    NVM_NODEJS_ORG_MIRROR: `${TAOBAO_MIRROR}/node`,
+    NVM_IOJS_ORG_MIRROR: `${TAOBAO_MIRROR}/iojs`,
 
-  // nvm
-  NVM_NODEJS_ORG_MIRROR: `${taobaoMirrors}/node`,
-  NVM_IOJS_ORG_MIRROR: `${taobaoMirrors}/iojs`,
+    // node-gyp
+    NODEJS_ORG_MIRROR: `${TAOBAO_MIRROR}/node`,
 
-  // node-gyp
-  NODEJS_ORG_MIRROR: `${taobaoMirrors}/node`,
+    // node-canvas
+    npm_config_canvas_binary_host_mirror: `${TAOBAO_MIRROR}/node-canvas-prebuilt`,
 
-  // node-canvas
-  npm_config_canvas_binary_host_mirror: `${taobaoMirrors}/node-canvas-prebuilt`,
+    // node-inspector
+    npm_config_profiler_binary_host_mirror: `${TAOBAO_MIRROR}/node-inspector/`,
 
-  // node-inspector
-  npm_config_profiler_binary_host_mirror: `${taobaoMirrors}/node-inspector/`,
+    // node-sqlite3
+    npm_config_node_sqlite3_binary_host_mirror: TAOBAO_MIRROR,
 
-  // node-sqlite3
-  npm_config_node_sqlite3_binary_host_mirror: taobaoMirrors,
+    // node-sass
+    npm_config_sass_binary_site: `${TAOBAO_MIRROR}/node-sass`,
 
-  // node-sass
-  npm_config_sass_binary_site: `${taobaoMirrors}/node-sass`,
+    // Browser drivers
+    npm_config_phantomjs_cdnurl: `${TAOBAO_MIRROR}/phantomjs`,
+    npm_config_chromedriver_cdnurl: `${TAOBAO_MIRROR}/chromedriver`.replace(
+      'https://',
+      'http://',
+    ),
+    npm_config_operadriver_cdnurl: `${TAOBAO_MIRROR}/operadriver`,
 
-  // Browser drivers
-  npm_config_phantomjs_cdnurl: `${taobaoMirrors}/phantomjs`,
-  npm_config_chromedriver_cdnurl: `${taobaoMirrors}/chromedriver`.replace(
-    'https://',
-    'http://',
-  ),
-  npm_config_operadriver_cdnurl: `${taobaoMirrors}/operadriver`,
+    // Electron
+    npm_config_electron_mirror: `${TAOBAO_MIRROR}/electron/`,
+    npm_config_electron_builder_binaries_mirror: `${TAOBAO_MIRROR}/electron-builder-binaries/`,
 
-  // Electron
-  npm_config_electron_mirror: `${taobaoMirrors}/electron/`,
-  npm_config_electron_builder_binaries_mirror: `${taobaoMirrors}/electron-builder-binaries/`,
+    // Python
+    npm_config_python_mirror: `${TAOBAO_MIRROR}/python`,
 
-  // Python
-  npm_config_python_mirror: `${taobaoMirrors}/python`,
+    // Couchbase
+    npm_config_couchbase_binary_host: `${TAOBAO_MIRROR}/couchbase`,
 
-  // Couchbase
-  npm_config_couchbase_binary_host: `${taobaoMirrors}/couchbase`,
+    // Chrome Puppeteer
+    npm_config_puppeteer_download_host: TAOBAO_MIRROR,
 
-  // Chrome Puppeteer
-  npm_config_puppeteer_download_host: taobaoMirrors,
+    // Cypress
+    npm_config_CYPRESS_DOWNLOAD_MIRROR: `${LOCAL_MIRROR}/cypress`,
+  }
 }

@@ -59,9 +59,14 @@
     ]
   },
   "dependencies": {
-    "execa": "^4.0.0"
+    "execa": "^4.0.0",
+    "get-port": "^5.1.1",
+    "got": "^11.0.2",
+    "signal-exit": "^3.0.3",
+    "tslib": "^1.11.1"
   },
   "devDependencies": {
+    "@types/signal-exit": "^3.0.0",
     "codecov": "^3",
     "eslint": "^6",
     "haoma": "^1.12.2",

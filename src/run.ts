@@ -1,18 +1,26 @@
 #!/usr/bin/env node
 import execa from 'execa'
-import { taobaoEnv } from './env'
+import { getTaobaoEnv } from './env'
+import { LocalMirror } from './LocalMirror'
 
-export function run(
+export async function run(
   cmd: string,
   args = process.argv.slice(2),
   cwd = process.cwd(),
 ) {
-  const env = Object.assign({}, process.env, taobaoEnv)
-  execa.sync(cmd, args, {
+  const localMirror = new LocalMirror()
+  await localMirror.start()
+  const env = Object.assign(
+    {},
+    process.env,
+    getTaobaoEnv(await localMirror.getUrl()),
+  )
+  await execa(cmd, args, {
     env: env,
     cwd: cwd,
     stdio: 'inherit',
   })
+  await localMirror.stop()
 }
 
 if (!module.parent) {
