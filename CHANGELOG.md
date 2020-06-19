@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/fjc0k/tbify/compare/v1.4.0...v1.5.0) (2020-06-19)
+
+### Features
+
+- 支持 fsevents ([295b881](https://github.com/fjc0k/tbify/commit/295b881939d6853eebaa45f10dbde3c789a18d31))
+- 更新镜像 ([59cb854](https://github.com/fjc0k/tbify/commit/59cb854038966f07daeadef63d1a7715f01b0da4))
+
 ## [1.4.0](https://github.com/fjc0k/tbify/compare/v1.3.0...v1.4.0) (2020-05-01)
 
 ### Features
