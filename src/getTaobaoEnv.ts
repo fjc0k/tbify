@@ -85,6 +85,8 @@ export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
     // https://github.com/nodegit/nodegit/blob/master/package.json#L69
     // NOTE: {version} 会被 node-pre-gyp 替换
     npm_config_nodegit_binary_host_mirror: `${TAOBAO_MIRROR}/nodegit/v{version}`,
+    // https://github.com/fsevents/fsevents
+    npm_config_fse_binary_host_mirror: `${TAOBAO_MIRROR}/fsevents/`,
 
     // prebuild
     npm_config_sharp_binary_host: `${TAOBAO_MIRROR}/sharp`,
