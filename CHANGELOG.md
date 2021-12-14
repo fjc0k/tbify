@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/fjc0k/tbify/compare/v1.5.0...v1.6.0) (2021-12-14)
+
+### Features
+
+- 更新淘宝镜像域名为 npmmirror.com ([80c3225](https://github.com/fjc0k/tbify/commit/80c3225e8a054888d6658655751695314cd0ae0d))
+
 ## [1.5.0](https://github.com/fjc0k/tbify/compare/v1.4.0...v1.5.0) (2020-06-19)
 
 ### Features
