@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/fjc0k/tbify/compare/v1.7.0...v1.8.0) (2021-12-15)
+
+### Features
+
+- 支持通过 -v, --version 查看当前版本号 ([cf537e2](https://github.com/fjc0k/tbify/commit/cf537e298661a168b3f4068467f0817639137cbb))
+
+### Bug Fixes
+
+- 应先判断 Yarn 版本再注入特定的环境变量 ([5fb52c1](https://github.com/fjc0k/tbify/commit/5fb52c14b5f891347322dd77d6559582d48b06bf))
+
 ## [1.7.0](https://github.com/fjc0k/tbify/compare/v1.6.0...v1.7.0) (2021-12-15)
 
 ### Features
