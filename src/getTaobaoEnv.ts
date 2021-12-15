@@ -17,8 +17,12 @@ export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
     // NPM registry
     npm_config_registry: TAOBAO_REGISTRY,
 
-    // Yarn registry
+    // Yarn 1 registry
     yarn_registry: TAOBAO_REGISTRY,
+
+    // Yarn > 1 registry
+    // https://yarnpkg.com/getting-started/migration#dont-use-npmrc-files
+    YARN_NPM_REGISTRY_SERVER: TAOBAO_REGISTRY,
 
     // node
     npm_config_disturl: `${TAOBAO_MIRROR}/node`,
