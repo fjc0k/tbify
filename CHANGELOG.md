@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/fjc0k/tbify/compare/v1.6.0...v1.7.0) (2021-12-15)
+
+### Features
+
+- 适配 yarn > 1 的版本 ([cd6b494](https://github.com/fjc0k/tbify/commit/cd6b494f73440f1573d30960a950f125b5a85098))
+
 ## [1.6.0](https://github.com/fjc0k/tbify/compare/v1.5.0...v1.6.0) (2021-12-14)
 
 ### Features
