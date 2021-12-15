@@ -3,6 +3,7 @@
 
 // ref: https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L42
 
+import execa from 'execa'
 import { TAOBAO_MIRROR, TAOBAO_REGISTRY } from './consts'
 
 // 尽量使用不带 npm_config_ 或 npm_package_config_ 前缀的环境变量：
@@ -12,17 +13,28 @@ import { TAOBAO_MIRROR, TAOBAO_REGISTRY } from './consts'
 // 这些参数又会被设置为全小写的环境变量 npm_config_* 向下传递，
 // 这就导致那些实现不严谨、预期得到大写参数的包得不到正确的设置，
 // 比如 Cypress。
-export function getTaobaoEnv(LOCAL_MIRROR: string): Record<string, string> {
+export async function getTaobaoEnv(
+  LOCAL_MIRROR: string,
+): Promise<Record<string, string>> {
+  const yarnVersion = await execa('yarn', ['-v']).then(
+    res => res.stdout,
+    () => '1.0.0',
+  )
+  const isYarnGreaterThan1 = !yarnVersion.startsWith('1.')
+
   return {
     // NPM registry
     npm_config_registry: TAOBAO_REGISTRY,
 
-    // Yarn 1 registry
-    yarn_registry: TAOBAO_REGISTRY,
-
-    // Yarn > 1 registry
-    // https://yarnpkg.com/getting-started/migration#dont-use-npmrc-files
-    YARN_NPM_REGISTRY_SERVER: TAOBAO_REGISTRY,
+    // Yarn registry
+    // 不可同时设置，否则会报错：
+    // Usage Error: Unrecognized or legacy configuration settings found: registry
+    [isYarnGreaterThan1
+      ? // Yarn > 1 registry
+        // https://yarnpkg.com/getting-started/migration#dont-use-npmrc-files
+        'YARN_NPM_REGISTRY_SERVER'
+      : // Yarn 1 registry
+        'yarn_registry']: TAOBAO_REGISTRY,
 
     // node
     npm_config_disturl: `${TAOBAO_MIRROR}/node`,

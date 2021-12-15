@@ -16,7 +16,7 @@ export async function run(
   const env = Object.assign(
     {},
     process.env,
-    getTaobaoEnv(await localMirror.getUrl()),
+    await getTaobaoEnv(await localMirror.getUrl()),
   )
 
   // 兼容 nvm

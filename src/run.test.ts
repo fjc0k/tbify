@@ -18,7 +18,7 @@ test('正确设置环境变量', async () => {
   `)
   await run('node', [jsFilePath])
   expect(JSON.parse(readFileSync(envFilePath).toString())).toEqual(
-    expect.objectContaining(getTaobaoEnv(`http://127.0.0.1:${port}`)),
+    expect.objectContaining(await getTaobaoEnv(`http://127.0.0.1:${port}`)),
   )
   unlinkSync(envFilePath)
   unlinkSync(jsFilePath)
