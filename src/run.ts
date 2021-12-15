@@ -55,5 +55,9 @@ export async function run(
 }
 
 if (!module.parent) {
-  run(process.argv[2], process.argv.slice(3))
+  if (process.argv[2] === '-v' || process.argv[2] === '--version') {
+    console.log(require(join(__dirname, '../package.json')).version)
+  } else {
+    run(process.argv[2], process.argv.slice(3))
+  }
 }
