@@ -43,15 +43,26 @@ export async function run(
     }
   }
 
+  const exec = execa(cmd, args, {
+    env: env,
+    cwd: cwd,
+    stdio: 'inherit',
+  })
+
   try {
-    await execa(cmd, args, {
-      env: env,
-      cwd: cwd,
-      stdio: 'inherit',
-    })
+    await exec
   } catch {}
 
   await localMirror.stop()
+
+  const exitCode = exec.exitCode || 0
+
+  // 测试时返回退出码
+  if (process.env.JEST_WORKER_ID) {
+    return exitCode
+  }
+
+  process.exit(exitCode)
 }
 
 if (!module.parent) {
