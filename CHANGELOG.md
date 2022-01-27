@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/fjc0k/tbify/compare/v1.8.0...v1.8.1) (2022-01-27)
+
+### Bug Fixes
+
+- 执行命令后应继承其退出码退出 ([fe8bebc](https://github.com/fjc0k/tbify/commit/fe8bebc379adc8320dd4926a7b791ef2e061ec1e))
+
 ## [1.8.0](https://github.com/fjc0k/tbify/compare/v1.7.0...v1.8.0) (2021-12-15)
 
 ### Features
