@@ -88,6 +88,13 @@ export async function getTaobaoEnv(
     // NOTE: 后缀 / 必加
     SHARP_DIST_BASE_URL: `${LOCAL_MIRROR}/sharp-libvips/`,
 
+    // Saucectl
+    SAUCECTL_INSTALL_BINARY_MIRROR: `${TAOBAO_MIRROR}/saucectl`,
+
+    // Prisma
+    // ref: https://www.prisma.io/docs/reference/api-reference/environment-variables-reference#prisma_engines_mirror
+    PRISMA_ENGINES_MIRROR: `${TAOBAO_MIRROR}/prisma`,
+
     // node-pre-gyp
     // ref: https://github.com/mapbox/node-pre-gyp/pull/170
     // https://github.com/node-gfx/node-canvas-prebuilt/blob/master/package.json#L24
