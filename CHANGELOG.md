@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/fjc0k/tbify/compare/v1.8.1...v1.9.0) (2022-02-07)
+
+### Features
+
+- 更新淘宝镜像地址 ([fa8fe3a](https://github.com/fjc0k/tbify/commit/fa8fe3ab36cd52ca2265b5ff60b49ed57996293f))
+- 新增支持 Saucectl, Prisma ([fef812c](https://github.com/fjc0k/tbify/commit/fef812c40f6b270e2acc4935f56b8e5b016a0d58))
+
+### Bug Fixes
+
+- 更新 canvas 镜像地址 ([4e43c63](https://github.com/fjc0k/tbify/commit/4e43c63f308d4528ec203206d482fa34736d944d))
+
 ### [1.8.1](https://github.com/fjc0k/tbify/compare/v1.8.0...v1.8.1) (2022-01-27)
 
 ### Bug Fixes

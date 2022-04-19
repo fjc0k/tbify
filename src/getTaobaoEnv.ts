@@ -98,7 +98,7 @@ export async function getTaobaoEnv(
     // node-pre-gyp
     // ref: https://github.com/mapbox/node-pre-gyp/pull/170
     // https://github.com/node-gfx/node-canvas-prebuilt/blob/master/package.json#L24
-    npm_config_canvas_binary_host_mirror: `${TAOBAO_MIRROR}/node-canvas-prebuilt`,
+    npm_config_canvas_binary_host_mirror: `${TAOBAO_MIRROR}/canvas`,
     // https://github.com/node-inspector/v8-profiler/blob/master/package.json#L24
     npm_config_profiler_binary_host_mirror: `${TAOBAO_MIRROR}/node-inspector`,
     // https://github.com/node-inspector/v8-debug/blob/master/package.json#L18
