@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/fjc0k/tbify/compare/v1.9.0...v1.10.0) (2022-04-19)
+
+### Features
+
+- 支持覆盖内部的环境变量值 ([57add43](https://github.com/fjc0k/tbify/commit/57add43ed052aebbfa8e87eb924d89c955d23d0b))
+
 ## [1.9.0](https://github.com/fjc0k/tbify/compare/v1.8.1...v1.9.0) (2022-02-07)
 
 ### Features
