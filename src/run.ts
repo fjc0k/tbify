@@ -13,11 +13,13 @@ export async function run(
   const localMirror = new LocalMirror(cwd)
   await localMirror.start()
 
-  const env = Object.assign(
-    {},
-    process.env,
-    await getTaobaoEnv(await localMirror.getUrl()),
-  )
+  const taobaoEnv = await getTaobaoEnv(await localMirror.getUrl())
+  for (const envName of Object.keys(taobaoEnv)) {
+    if (process.env[envName] != null) {
+      delete taobaoEnv[envName]
+    }
+  }
+  const env = Object.assign({}, process.env, taobaoEnv)
 
   // 兼容 nvm
   if (cmd === 'nvm') {

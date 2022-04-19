@@ -53,7 +53,14 @@ pnpm add --global tbify
 
 ```bash
 tbify printenv npm_config_registry
-# -> https://r.npm.taobao.org
+# -> https://registry.npmmirror.com
+```
+
+若想覆盖内部的环境变量值，可在使用 `tbify` 前设置：
+
+```bash
+npm_config_registry=https://my.npm.mirror tbify printenv npm_config_registry
+# -> https://my.npm.mirror
 ```
 
 ## 鸣谢

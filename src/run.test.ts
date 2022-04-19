@@ -33,4 +33,22 @@ describe('run', () => {
     expect(exitCode).toBe(100)
     unlinkSync(jsFilePath)
   })
+
+  test('支持覆盖内部的环境变量值', async () => {
+    process.env.PRISMA_ENGINES_MIRROR = 'https://my.mirror'
+    const envFilePath = tmp.file()
+    const jsFilePath = tmp.writeSync(`
+      const fs = require('fs')
+      fs.writeFileSync(
+        ${JSON.stringify(envFilePath)},
+        JSON.stringify(process.env, null, 2),
+      )
+    `)
+    await run('node', [jsFilePath])
+    expect(
+      JSON.parse(readFileSync(envFilePath).toString()).PRISMA_ENGINES_MIRROR,
+    ).toBe('https://my.mirror')
+    unlinkSync(envFilePath)
+    unlinkSync(jsFilePath)
+  })
 })
