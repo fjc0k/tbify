@@ -11,5 +11,5 @@ jobs:
 
       - name: test
         run: |
-          npm install
-          npm run test
+          yarn
+          yarn test
