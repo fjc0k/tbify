@@ -36,6 +36,9 @@ export async function getTaobaoEnv(
       : // Yarn 1 registry
         'yarn_registry']: TAOBAO_REGISTRY,
 
+    // Corepack registry
+    COREPACK_NPM_REGISTRY: TAOBAO_REGISTRY,
+
     // node
     npm_config_disturl: `${TAOBAO_MIRROR}/node`,
 
@@ -56,6 +59,15 @@ export async function getTaobaoEnv(
 
     // node-sass
     SASS_BINARY_SITE: `${TAOBAO_MIRROR}/node-sass`,
+
+    // https://github.com/imagemin-global/advpng-bin/blob/main/lib/index.js#L10
+    ADVPNG_BINARY_SITE: `${TAOBAO_MIRROR}/advpng-bin`,
+
+    // https://github.com/imagemin-global/jpegoptim-bin/blob/main/lib/index.js#L10
+    JPEGOPTIM_BINARY_SITE: `${TAOBAO_MIRROR}/jpegoptim-bin`,
+
+    // https://github.com/imagemin-global/gifsicle-bin/blob/main/lib/index.js#L10
+    GIFSICLE_BINARY_SITE: `${TAOBAO_MIRROR}/gifsicle-bin`,
 
     // node-swc
     SWC_BINARY_SITE: `${TAOBAO_MIRROR}/node-swc`,
