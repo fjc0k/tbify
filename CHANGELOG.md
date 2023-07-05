@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/fjc0k/tbify/compare/v1.10.0...v1.11.0) (2023-07-05)
+
+### Features
+
+- 新增 COREPACK_NPM_REGISTRY, ADVPNG_BINARY_SITE, JPEGOPTIM_BINARY_SITE, GIFSICLE_BINARY_SITE 环境变量 ([a8454f2](https://github.com/fjc0k/tbify/commit/a8454f281d6a9610a810a7ac92ace03ac84018f0))
+
 ## [1.10.0](https://github.com/fjc0k/tbify/compare/v1.9.0...v1.10.0) (2022-04-19)
 
 ### Features
