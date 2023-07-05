@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.2](https://github.com/fjc0k/tbify/compare/v1.11.1...v1.11.2) (2023-07-05)
+
+### Bug Fixes
+
+- 新增 tyarn, tpnpm, tpnpx 命令 ([77d4072](https://github.com/fjc0k/tbify/commit/77d407209f79e8913ab33568403c30b328409edb))
+
 ### [1.11.1](https://github.com/fjc0k/tbify/compare/v1.11.0...v1.11.1) (2023-07-05)
 
 ## [1.11.0](https://github.com/fjc0k/tbify/compare/v1.10.0...v1.11.0) (2023-07-05)
