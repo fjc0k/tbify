@@ -40,14 +40,14 @@ pnpm add --global tbify
 
 对于常用的包管理命令，`tbify` 提供了使用淘宝 NPM 镜像的等价命令，除了发布包到 npm 时必须使用 `npm publish` 外，都可以使用等价命令进行相关操作：
 
-| 原命令 | 使用淘宝 NPM 镜像的命令 | 示例                  |
-| ------ | ----------------------- | --------------------- |
-| `nvm`  | `tnvm` (或 `tbify nvm`) | `tnvm install 8.0.0`  |
-| `npm`  | `tnpm` (或 `tbify npm`) | `tnpm install react`  |
-| `npx`  | `tnpx` (或 `tbify npx`) | `tnpx kill-port 3000` |
-| `yarn` | `tyn` (或 `tbify yarn`) | `tyn add react`       |
-| `pnpm` | `tpm` (或 `tbify pnpm`) | `tpm add react`       |
-| `pnpx` | `tpx` (或 `tbify pnpx`) | `tpx kill-port 3000`  |
+| 原命令 | 使用淘宝 NPM 镜像的命令                                                       | 示例                  |
+| ------ | ----------------------------------------------------------------------------- | --------------------- |
+| `nvm`  | `tnvm` / `tbify nvm`                                                          | `tnvm install 8.0.0`  |
+| `npm`  | `tnpm` / `tbify npm`                                                          | `tnpm install react`  |
+| `npx`  | `tnpx` / `tbify npx`                                                          | `tnpx kill-port 3000` |
+| `yarn` | `tyn` / `tyarn` / `tbify yarn`                                                | `tyn add react`       |
+| `pnpm` | `tpm` (Windows 下该命令被系统占用，请使用后面的替代) / `tpnpm` / `tbify pnpm` | `tpm add react`       |
+| `pnpx` | `tpx` / `tpnpx` / `tbify pnpx`                                                | `tpx kill-port 3000`  |
 
 对于其他命令，在使用时加上 `tbify` 前缀即可，比如：
 
