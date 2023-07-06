@@ -12,4 +12,4 @@ jobs:
       - name: test
         run: |
           yarn
-          yarn test
+          npm test
