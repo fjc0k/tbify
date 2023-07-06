@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/fjc0k/tbify/compare/v1.11.2...v1.12.0) (2023-07-06)
+
+### Features
+
+- 新增 PNGQUANT_BINARY_SITE, MOZJPEG_BINARY_SITE, CWEBP_BINARY_SITE 环境变量 ([de444a9](https://github.com/fjc0k/tbify/commit/de444a9d03b87a8adce1ddd43b0509a88c3e23e9))
+
 ### [1.11.2](https://github.com/fjc0k/tbify/compare/v1.11.1...v1.11.2) (2023-07-05)
 
 ### Bug Fixes
