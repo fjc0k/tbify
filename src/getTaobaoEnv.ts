@@ -63,11 +63,20 @@ export async function getTaobaoEnv(
     // https://github.com/imagemin-global/advpng-bin/blob/main/lib/index.js#L10
     ADVPNG_BINARY_SITE: `${TAOBAO_MIRROR}/advpng-bin`,
 
+    // https://github.com/imagemin-global/pngquant-bin/blob/main/lib/index.js#L10
+    PNGQUANT_BINARY_SITE: `${TAOBAO_MIRROR}/pngquant-bin`,
+
     // https://github.com/imagemin-global/jpegoptim-bin/blob/main/lib/index.js#L10
     JPEGOPTIM_BINARY_SITE: `${TAOBAO_MIRROR}/jpegoptim-bin`,
 
+    // https://github.com/imagemin-global/mozjpeg-bin/blob/main/lib/index.js#L10
+    MOZJPEG_BINARY_SITE: `${TAOBAO_MIRROR}/mozjpeg-bin`,
+
     // https://github.com/imagemin-global/gifsicle-bin/blob/main/lib/index.js#L10
     GIFSICLE_BINARY_SITE: `${TAOBAO_MIRROR}/gifsicle-bin`,
+
+    // https://github.com/imagemin-global/cwebp-bin/blob/main/lib/index.js#L10
+    CWEBP_BINARY_SITE: `${TAOBAO_MIRROR}/cwebp-bin`,
 
     // node-swc
     SWC_BINARY_SITE: `${TAOBAO_MIRROR}/node-swc`,
