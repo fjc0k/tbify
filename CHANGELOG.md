@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/fjc0k/tbify/compare/v1.12.0...v1.13.0) (2023-08-14)
+
+### Features
+
+- 新增 sync 命令手动同步 NPM 包到淘宝镜像 ([70ab632](https://github.com/fjc0k/tbify/commit/70ab632c1a46767369e76a36e289b8084fcd9077))
+
 ## [1.12.0](https://github.com/fjc0k/tbify/compare/v1.11.2...v1.12.0) (2023-07-06)
 
 ### Features

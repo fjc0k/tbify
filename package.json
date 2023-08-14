@@ -1,6 +1,6 @@
 {
   "name": "tbify",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "description": "使用淘宝 NPM 镜像加速包管理工具安装依赖的速度。",
   "keywords": [
     "npm",
