@@ -35,6 +35,7 @@
     "tpnpm": "lib/alias/pnpm.js",
     "tpnpx": "lib/alias/pnpx.js",
     "tpx": "lib/alias/pnpx.js",
+    "tsync": "lib/alias/sync.js",
     "tyarn": "lib/alias/yarn.js",
     "tyn": "lib/alias/yarn.js"
   },

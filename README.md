@@ -9,6 +9,7 @@
 - [原理](#原理)
 - [安装](#安装)
 - [使用](#使用)
+- [手动同步 NPM 包到淘宝镜像](#手动同步-npm-包到淘宝镜像)
 - [鸣谢](#鸣谢)
 - [许可](#许可)
 
@@ -61,6 +62,18 @@ tbify printenv npm_config_registry
 ```bash
 npm_config_registry=https://my.npm.mirror tbify printenv npm_config_registry
 # -> https://my.npm.mirror
+```
+
+## 手动同步 NPM 包到淘宝镜像
+
+可以通过 `tsync` 或 `tbify sync` 命令手动同步一个或多个 NPM 包到淘宝镜像。
+
+```bash
+# 一个
+tsync vue
+
+# 多个
+tsync vue react
 ```
 
 ## 鸣谢

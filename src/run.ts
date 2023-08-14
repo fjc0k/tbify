@@ -43,6 +43,9 @@ export async function run(
       cmd = 'sh'
       args.unshift(join(__dirname, './bin/nvm'))
     }
+  } else if (cmd === 'sync') {
+    cmd = 'node'
+    args.unshift(join(__dirname, './sync.js'))
   }
 
   const exec = execa(cmd, args, {
