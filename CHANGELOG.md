@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/fjc0k/tbify/compare/v1.13.0...v1.14.0) (2023-11-17)
+
+### Features
+
+- 新增 Playwright ([c91da93](https://github.com/fjc0k/tbify/commit/c91da937be58265682d9a4836978ae66700e1bfe))
+
+### Bug Fixes
+
+- 更新 Puppeteer ([9a8032c](https://github.com/fjc0k/tbify/commit/9a8032cb0f5cb5873a33cffe10e907292e4a5491))
+
 ## [1.13.0](https://github.com/fjc0k/tbify/compare/v1.12.0...v1.13.0) (2023-08-14)
 
 ### Features
