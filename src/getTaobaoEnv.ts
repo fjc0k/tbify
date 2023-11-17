@@ -98,6 +98,9 @@ export async function getTaobaoEnv(
     /** @deprecated */
     PUPPETEER_DOWNLOAD_HOST: `${TAOBAO_MIRROR}/chrome-for-testing`,
 
+    // Playwright
+    PLAYWRIGHT_DOWNLOAD_HOST: `${TAOBAO_MIRROR}/playwright`,
+
     // NW.js
     NWJS_URLBASE: `${TAOBAO_MIRROR}/nwjs/v`,
 
