@@ -94,7 +94,9 @@ export async function getTaobaoEnv(
     PYTHON_MIRROR: `${TAOBAO_MIRROR}/python`,
 
     // Chrome Puppeteer
-    PUPPETEER_DOWNLOAD_HOST: TAOBAO_MIRROR,
+    PUPPETEER_DOWNLOAD_BASE_URL: `${TAOBAO_MIRROR}/chrome-for-testing`,
+    /** @deprecated */
+    PUPPETEER_DOWNLOAD_HOST: `${TAOBAO_MIRROR}/chrome-for-testing`,
 
     // NW.js
     NWJS_URLBASE: `${TAOBAO_MIRROR}/nwjs/v`,
