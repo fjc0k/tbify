@@ -46,6 +46,9 @@ export async function getTaobaoEnv(
     NVM_NODEJS_ORG_MIRROR: `${TAOBAO_MIRROR}/node`,
     NVM_IOJS_ORG_MIRROR: `${TAOBAO_MIRROR}/iojs`,
 
+    // fnm
+    FNM_NODE_DIST_MIRROR: `${TAOBAO_MIRROR}/node`,
+
     // nodist
     NODIST_NODE_MIRROR: `${TAOBAO_MIRROR}/node`,
     NODIST_IOJS_MIRROR: `${TAOBAO_MIRROR}/iojs`,

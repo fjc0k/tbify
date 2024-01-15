@@ -28,6 +28,7 @@
   "main": "lib/run.js",
   "bin": {
     "tbify": "lib/run.js",
+    "tfnm": "lib/alias/fnm.js",
     "tnpm": "lib/alias/npm.js",
     "tnpx": "lib/alias/npx.js",
     "tnvm": "lib/alias/nvm.js",

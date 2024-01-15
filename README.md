@@ -20,7 +20,7 @@
 基于环境变量对国内请求速度欠佳的资源地址进行了替换，具体分为两点：
 
 - 通过环境变量令包管理工具（`npm`、`npx`、`yarn`、`pnpm`、`pnpx`）使用淘宝源安装依赖；
-- 通过环境变量令诸如 `nvm`、 `node-sass`、`Electron`、`Puppeteer`、`Cypress`、`Sharp`、`Prisma` 等包使用淘宝镜像安装其自身所需资源。
+- 通过环境变量令诸如 `nvm`、`fnm`、`node-sass`、`Electron`、`Puppeteer`、`Cypress`、`Sharp`、`Prisma` 等工具或包使用淘宝镜像安装其自身所需资源。
 
 以上，本工具对包管理工具本身零侵入，同时，对环境变量的设置也是一次性的，并不会产生任何的副作用，请放心使用。
 
@@ -44,6 +44,7 @@ pnpm add --global tbify
 | 原命令 | 使用淘宝 NPM 镜像的命令                                                       | 示例                  |
 | ------ | ----------------------------------------------------------------------------- | --------------------- |
 | `nvm`  | `tnvm` / `tbify nvm`                                                          | `tnvm install 8.0.0`  |
+| `fnm`  | `tfnm` / `tbify fnm`                                                          | `tfnm install 20`     |
 | `npm`  | `tnpm` / `tbify npm`                                                          | `tnpm install react`  |
 | `npx`  | `tnpx` / `tbify npx`                                                          | `tnpx kill-port 3000` |
 | `yarn` | `tyn` / `tyarn` / `tbify yarn`                                                | `tyn add react`       |
