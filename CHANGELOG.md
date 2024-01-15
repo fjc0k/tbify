@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/fjc0k/tbify/compare/v1.14.0...v1.15.0) (2024-01-15)
+
+### Features
+
+- 支持 fnm ([5d19a3e](https://github.com/fjc0k/tbify/commit/5d19a3ebe4c653ee8c5eed409f088ac4ac505bad))
+
 ## [1.14.0](https://github.com/fjc0k/tbify/compare/v1.13.0...v1.14.0) (2023-11-17)
 
 ### Features
